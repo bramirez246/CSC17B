@@ -1,0 +1,72 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 24, 2017, 10:58:07 PM
+    Author     : Brian
+*/
+
+div.scrollmenu{
+    width: 80%;
+    height: 250px;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+div.scrollmenu .dropdown{
+    display: inline-block;
+}
+
+label{
+    font-weight: bold;
+    display: block;
+    text-align: center;
+}
+
+.dropdown .imgBtn{
+    background-color: #000000;
+    cursor: pointer;
+}
+
+.dropdown{
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background-image: url("Icons/fireball.jpg");
+    background-size: 200px 200px;
+}
+
+.dropdown-content{
+    display: none;
+    position: relative;
+    float: left;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    max-width: 250px;
+    overflow: visible;
+    overflow-style: marquee-line;
+}
+
+.dropdown-content a:hover{
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content{
+    display:block;
+}
+
+.dropdown:hover .imgBtn{
+    background-color: #3e8e41;
+}

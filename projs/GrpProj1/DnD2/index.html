@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Display Skills Bar</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="Skills.js"></script>
+        <link rel="stylesheet" href="Style.css">
+    </head> 
+    <body>
+        <script>
+            var mage1 = new Skill("Fireball", "A bright streak flashes from your pointing finger to a \n\
+                point you choose within range and then blossoms with a low roar into an explosion of flame.", 30);
+            var mage2 = new Skill("Magic Missile", "You create three glowing darts of magical force. \n\
+                Each dart hits a creature of your choice that you can see within range.", 15);
+            var fighter1 = new Skill("Lunging Strike", "You lunge at a foe that thought it was beyond your reach.", 15);
+            var fighter2 = new Skill("Grappling Strike", "You hew your foe with a simple attack and \n\
+                then grab it with your empty hand to keep it from escaping.", 30);
+            var knight1 = new Skill("Shield Bash", "You knock your adversary off balance with \n\
+                your shield and follow up with a strike.", 15);
+            var knight2 = new Skill("Shield Ally", "You can burn an immediate action to absorb half \n\
+                of the physical damage dealt to an adjacent ally.", 20);
+            var archer1= new Skill("Devastating Strike", "You shoot a quick arrow that deals a great amount damage.", 15);
+            var archer2 = new Skill("Barrage", "You shoot a sequence of arrows that will rain down on your enemies.", 25);
+        </script>
+        <div class="scrollmenu">
+            <div class="dropdown">
+                <div class="dropdown-content">
+                    <a><script>document.write(mage1.skillDscrptn);</script></a> 
+                </div>  
+            </div>
+            <div class="dropdown">
+                <label><script>document.write(mage2.skillName);</script></label>
+                <button class="imgBtn"><img src="Icons/magicMissile.jpg" width="200" height="200" alt=""></button>
+                <div class="dropdown-content">
+                    <a><script>document.write(mage2.skillDscrptn);</script></a> 
+                </div>  
+            </div>
+            <div class="dropdown">
+                <label><script>document.write(mage2.skillName);</script></label>
+                <button class="imgBtn"><img src="Icons/magicMissile.jpg" width="200" height="200" alt=""></button>
+            </div> 
+            <div class="dropdown">
+                <label><script>document.write(mage2.skillName);</script></label>
+                <button class="imgBtn"><img src="Icons/magicMissile.jpg" width="200" height="200" alt=""></button>
+            </div> 
+            <div class="dropdown">
+                <label><script>document.write(mage2.skillName);</script></label>
+                <button class="imgBtn"><img src="Icons/magicMissile.jpg" width="200" height="200" alt=""></button>
+            </div>
+            <div class="dropdown">
+                <label><script>document.write(mage2.skillName);</script></label>
+                <button class="imgBtn"><img src="Icons/magicMissile.jpg" width="200" height="200" alt=""></button>
+            </div>
+            <div class="dropdown">
+                <label><script>document.write(mage2.skillName);</script></label>
+                <button class="imgBtn"><img src="Icons/magicMissile.jpg" width="200" height="200" alt=""></button>
+            </div>
+            <div class="dropdown">
+                <label><script>document.write(mage2.skillName);</script></label>
+                <button class="imgBtn"><img src="Icons/magicMissile.jpg" width="200" height="200" alt=""></button>
+            </div>
+            <div class="dropdown">
+                <label><script>document.write(mage2.skillName);</script></label>
+                <button class="imgBtn"><img src="Icons/magicMissile.jpg" width="200" height="200" alt=""></button>
+            </div>
+        </div>
+    </body>
+</html>
