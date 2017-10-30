@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Survey</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="Survey.js"></script>
+        <script type="text/javascript" src="Question.js"></script>
+        <script type="text/javascript" src="getForm.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            // If storage does not exist create default
+            if (localStorage.getItem("Question") === null){
+                var qstn1={"cat":"1","qstn":"What is your gender?","ans":["male","female","other"]};
+                var qstn2={"cat":"2","qstn":"What is your age?","ans":["Younger than 10","11-15","16-18","19+"]};
+                var qstn3={"cat":"3","qstn":"What is your favorite type of music?","ans":["Hip-hop/Rap","Rock","Pop","Other"]};
+                var qstn4={"cat":"4","qstn":"What is your favorite instrument?","ans":["guitar","bass","drums","other"]};
+                var qstn5={"cat":"5","qstn":"What is your favorite music listening platform?","ans":["iTunes","Spotify","Pandora","Other"]};
+                var question=[];
+                question[0]=qstn1;
+                question[1]=qstn2;
+                question[2]=qstn3;
+                question[3]=qstn4;
+                question[4]=qstn5;
+
+                //Stringify array of question and answers
+                var str=JSON.stringify(question);
+                // Store into local storage
+                localStorage.setItem("Question", str);
+            }
+
+            var text = localStorage.getItem("Question");
+            var questn = JSON.parse(text);
+            var questions =[];
+            for(var i = 0;i<questn.length;i++){
+                var newQuestn = new Question(questn[i]);
+                questions.push(newQuestn);
+            }
+            for(var i = 0;i<questn.length;i++){
+                document.write("Question #"+(i+1));
+                var obj = questn[i];
+                var b = new Question(obj);
+                b.display();
+            }
+        </script>
+        <form action="getForm.html" method="get">
+            <input name="Number" type="text" /><label>Category-Priority-Number</label><br>
+            <input name="Question" type="text" /><label>Question</label><br>
+            <input name="Answer1" type="text" /><label>Answer1</label><br>
+            <input name="Answer2" type="text" /><label>Answer2</label><br>
+            <input name="Answer3" type="text" /><label>Answer3</label><br>
+            <input name="Answer4" type="text" /><label>Answer4</label><br>
+            <input name="Submit" type="submit" />
+        </form>
+    </body>
+</html>

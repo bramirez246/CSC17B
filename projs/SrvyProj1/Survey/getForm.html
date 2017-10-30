@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="Survey.js"></script>
+        <script type="text/javascript" src="Question.js"></script>
+        <script type="text/javascript" src="getForm.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            //Grab the info from the form
+            var url=document.location.href;
+            $_GET=getForm(url);
+            var counter=0;
+            var answers=[];
+            for(property in $_GET){
+                var str=$_GET[property];          //Place property value in string
+                var dec=decodeURIComponent(str);  //Convert to ascii
+                var clean=dec.replace(/\++/g,' ');//Remove + and replace by space
+                $_GET[property]=clean;            //Cleaned values
+                counter++;
+                if(counter>2&&clean!=="")answers.push(clean); //Place answers into their own array
+            }
+
+            //Fill the Question with form information and display
+            var a=new Question($_GET["Number"],$_GET["Question"],answers);
+            var text = JSON.stringify(a);
+            var str = localStorage.getItem("Question");
+            var questn = JSON.parse(str);
+            var questions =[];
+            questn.push(a);
+            var text = JSON.stringify(questn);
+            localStorage.setItem("Question", text);
+            for(var i = 0;i<questn.length;i++){
+                var newQuestn = new Question(questn[i]);
+                questions.push(newQuestn);
+            }
+            for(var i = 0;i<questn.length;i++){
+                document.write("Question #"+(i+1)+"<br>");
+                var obj = questn[i];
+                var b = new Question(obj);
+                b.display();
+            }
+        </script>
+        <form action="getForm.html" method="get">
+                <input name="Number" type="text" /><label>Category-Priority-Number</label><br>
+                <input name="Question" type="text" /><label>Question</label><br>
+                <input name="Answer1" type="text" /><label>Answer1</label><br>
+                <input name="Answer2" type="text" /><label>Answer2</label><br>
+                <input name="Answer3" type="text" /><label>Answer3</label><br>
+                <input name="Answer4" type="text" /><label>Answer4</label><br>
+                <input name="Submit" type="submit" />
+        </form>
+    </body>
+</html>
