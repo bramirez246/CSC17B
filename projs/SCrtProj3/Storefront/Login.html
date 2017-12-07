@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="LoginForm.css">
+    </head>
+
+    <body>
+        <form name="loginForm" action="Catalog.html" method="post">
+            <h2>Login</h2>
+            <div id="container">
+                <label><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="username"><br><br>
+                <label><b>Password</b></label>
+                <input type="text" placeholder="Enter Password" name="password"><br><br>
+                <button id="login" type="submit">Login</button>
+            </div>
+            <div id="bigCont">
+                <div id="smallCont">
+                    <div id="popUpClose"><a id="closeBtn" onclick="hideReg()">X</a></div>
+                    <div id="popUpCont"></div>
+                </div>
+            </div>
+        </form>
+        <script>
+            document.getElementById("container").innerHTML += "<button id='register' onclick='displayReg()'>Register</button>";
+            document.getElementById("container").innerHTML += "<button id='register' onclick='displayAdmin()'>Admin</button>";
+            
+            function displayReg(){
+                document.loginForm.action = "adminLogin.php";
+                document.getElementById("bigCont").style.display = "block";
+                document.getElementById("popUpCont").innerHTML =
+                    "<label><b>First Name</b></label>"+" "+"<input type='text' placeholder='Enter first name' required><br><br>";
+                document.getElementById("popUpCont").innerHTML += "<label><b>Last Name</b></label>"+" "+"<input type='text' placeholder='Enter last name' required><br><br>";
+                document.getElementById("popUpCont").innerHTML += "<label><b>Email Address</b></label>"+" "+"<input type='text' placeholder='Enter email address' required><br><br>";
+                document.getElementById("popUpCont").innerHTML += "<label><b>Password</b></label>"+" "+"<input type='text' placeholder='Enter password' required><br><br>";
+                document.getElementById("popUpCont").innerHTML += "<button id='register' type='submit'>Register</button>";
+            }
+            
+            function hideReg(){
+                document.loginForm.action = "Catalog.html";
+                document.getElementById("bigCont").style.display = "none";
+                document.getElementById("popUpName").innerHTML = "";
+                document.getElementById("popUpCont").innerHTML = "";
+            }
+            
+            function displayAdmin(){
+                document.loginForm.action = "adminLogin.php";
+                document.getElementById("bigCont").style.display = "block";
+                document.getElementById("popUpCont").innerHTML += "<label><b>Email Address</b></label>"+" "+"<input type='text' name='email' placeholder='Enter email address' required><br><br>";
+                document.getElementById("popUpCont").innerHTML += "<label><b>Password</b></label>"+" "+"<input type='text' name='password' placeholder='Enter password' required><br><br>";
+                document.getElementById("popUpCont").innerHTML += "<button id='register' type='submit'>Login</button>";
+            }
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,118 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 20, 2017, 8:53:15 PM
+    Author     : Brian
+*/
+
+form {
+    border: 3px solid #808080;
+    padding: 30px;
+    margin: 50px;
+    width: 50%;
+    max-width: 300px;
+    min-width: 250px;
+    position: absolute;
+    top: 32%;
+    left: 38%;
+    background-color: #808080;
+    background: rgba(0,0,0,0.70);
+}
+
+h2{
+    text-align: center;
+    color: 	#f5f5f5;
+}
+
+label{
+    color: 	#f5f5f5;
+    text-align: center;
+}
+
+#login{
+    border: none;
+    outline: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 7px;
+}
+
+#login:hover{
+    background-color: #4CFF50;
+}
+
+#register{
+    float: right;
+    border: none;
+    outline: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 7px;
+}
+
+#register:hover{
+    background-color: #4CFF50;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-size: 1950px;
+    background-repeat: no-repeat;
+    background-image:  url(Imgs/background.jpg); 
+    
+}
+
+#bigCont{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(40, 40, 40, 0.9);
+    z-index: 2;
+}
+
+#smallCont{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 275px;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0,0,0, 0.5);
+    border-radius: 20px;
+    color: #E27822;
+    padding: 10px 30px 10px 30px;
+}
+
+#popUpCont{
+    display: block;
+    width: 100%;
+    float: left;
+    padding: 10px;
+    padding-bottom: 15px;
+}
+
+#popUpClose{
+    display: block;
+    width: 100%;
+    float: left;
+}
+
+#closeBtn{
+    cursor: pointer;
+    font-weight: bold;
+    float: right;
+    color: #ff0000;
+}
+
+#closeBtn:hover{
+    color: #ff7050;
+}
