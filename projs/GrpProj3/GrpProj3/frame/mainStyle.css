@@ -1,0 +1,245 @@
+.iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
+} 
+
+.map{
+    width: 70%;
+    height: 500px;
+    position: relative;
+    float: left;
+}
+
+.side_bar{
+    width: 30%;
+    height: 100%;
+    position: relative;
+    float: right;
+}
+
+.player_info{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    float: left;
+}
+
+.dice{
+    position: relative;
+    width: 50%;
+    height: 100px;
+    float: left;
+}
+
+.skip{
+    position: relative;
+    width: 50%;
+    height: 100px;
+    float: left;
+}
+
+.skill{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    float: left;
+}
+
+#scrollmenu{
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+    border: 1px white solid;
+}
+
+#skillPopUp{
+    display:none;
+    width: 200px;
+    height:100%;
+    color: white;
+}
+
+#bigCont{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(40, 40, 40, 0.9);
+    z-index: 2;
+}
+
+#smallCont{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 275px;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0,0,0, 0.5);
+    border-radius: 20px;
+    color: #E27822;
+    padding: 10px 30px 10px 30px;
+}
+
+#popUpName{
+    display: block;
+    text-align: center;
+    width: 100%;
+    float: left;
+}
+
+#popUpCont{
+    display: block;
+    width: 100%;
+    float: left;
+    padding: 10px;
+    padding-bottom: 15px;
+}
+
+#popUpClose{
+    display: block;
+    width: 100%;
+    float: left;
+}
+
+#closeBtn{
+    cursor: pointer;
+    font-weight: bold;
+    float: right;
+    color: #ff0000;
+}
+
+#closeBtn:hover{
+    color: #ff7050;
+}
+
+/* width */
+::-webkit-scrollbar{
+    height: 15px;
+    width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track{
+    background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb{
+    background: #888; 
+}
+
+.container{
+    display: inline-block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    height: 78px;
+    width: 100px;
+    border-left: 1px white solid;
+    border-right: 1px white solid;
+    border-bottom: 1px white solid;   
+}
+
+.container:hover {
+    background-color: #777;
+}
+
+.inventory{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    float: left;
+}
+
+.turns{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    float: left;
+}
+
+#dice_button{
+    text-align: center;
+    line-height: 250%;
+    display: block;
+    margin: 10% auto;
+    font-size: 25px;
+    font-family: Permanent Marker;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #ad1616;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px #440606;
+    width: 70%;
+    height: 70%;
+    z-index: 2;
+}
+
+#dice_button:hover {background-color: #720c0c}
+
+#dice_button:active{
+  background-color: #720c0c;
+  box-shadow: 0 3px #440606;
+  transform: translateY(2px);
+}
+
+#skip_button{
+    text-align: center;
+    display: block;
+    margin: 10% auto;
+    font-size: 25px;
+    font-family: Permanent Marker;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #1d7f21;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px #082609;
+    width: 70%;
+    height: 70%;
+    z-index: 2;
+}
+
+#skip_button:hover {
+    background-color: #135415;
+}
+
+#skip_button:active{
+  background-color: #135415;
+  box-shadow: 0 3px #082609;
+  transform: translateY(2px);
+}
+
+@media screen and (max-width: 850px){
+    .main{
+        height: 900px;
+    }
+    .map{
+        width: 100%;
+    }
+    
+    .side_bar{
+        width: 100%;
+    }
+    
+    .player_info{
+        width: 50%;
+    }
+    
+    .dice{
+        width: 25%;
+    }
+    
+    .skip{
+        width:25%;
+    }
+}

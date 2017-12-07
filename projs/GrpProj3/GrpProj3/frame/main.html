@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>D&D</title>
+        <link rel="stylesheet" href="mainStyle.css">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+        <script src="rollDice.js"></script>
+	</head>
+	<body>
+        <!-------------- header bar --------------->
+        <div class="header">
+            <img src="other_img/logo.png" width="50%">
+        </div>
+        
+        <!-------------- main/body --------------->
+        <div class="main">
+            <!-- map -->
+            <div class="map">
+                <img class="border" src="other_img/frame.png">
+            </div>
+            
+            <!--- side bar --->
+            <div class="side_bar">
+                <!-- player_info -->
+                <div class="player_info">
+                    <img class="border" src="other_img/frame.png">
+                </div>
+                
+                <!-- dice button -->
+                <div class="dice">
+                    <a id="dice_button" onclick="rollDice(12)">ROLL</a>
+                </div>
+
+                <!-- skip button -->
+                <div class="skip">
+                    <button id="skip_button">SKIP</button>
+                </div>
+
+                <!-- skill -->
+                <div class="skill">
+                    <div id="scrollmenu">
+                        <div id="skillPopUp">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- inventory -->
+                <div class="inventory">
+                    <img class="border" src="other_img/frame.png">
+                </div>
+
+                <!-- turns -->
+                <div class="turns">
+                    <img class="border" src="other_img/frame.png">
+                </div>
+            </div>
+            
+            
+        </div>
+        
+        <!-------------- footer bar --------------->
+        <div class="footer">
+        
+        </div>
+        
+        <div id="bigCont">
+            <div id="smallCont">
+                <div id="popUpClose"><a id="closeBtn" onclick="hideDescrp()">X</a></div>
+                <div id="popUpName"></div>
+                <div id="popUpCont"></div>
+            </div>
+
+        </div>
+            <script>
+                //Displaying Mage skills
+                var skillImg = new Array();
+                skillImg = ["fireball","magicMissile","fireball","fireball","fireball"];
+                var skillName = new Array();
+                skillName=["Fireball","Magic Missile","Fireball","Fireball","Fireball"];
+                var skillDscrp = ["A bright streak flashes from your staff to a point you choose within range and then blossoms with a low roar into an explosion of flame.",
+                "You create three glowing darts of magical force. Each dart hits a creature of your choice that you can see within range.",
+                "test2 test test test test",
+                "test3 test test test test","test4 test test test test"];
+
+                for(var i=0; i<skillImg.length;i++){
+                    document.getElementById("scrollmenu").innerHTML += 
+                            "<img onclick='displayDescrp("+ i +")' src='other_img/"+ skillImg[i] +".jpg' class='container'>";
+                }
+                //Displays description of skill
+                function displayDescrp(loc){
+                    var test = skillName[loc] + "\n\n" + skillDscrp[loc];
+                    document.getElementById("bigCont").style.display = "block";
+                    document.getElementById("popUpName").innerHTML = skillName[loc];
+                    document.getElementById("popUpCont").innerHTML = skillDscrp[loc];
+                    
+                }
+                
+                //Hides description of skill
+                function hideDescrp(){
+                    document.getElementById("bigCont").style.display = "none";
+                    document.getElementById("popUpName").innerHTML = "";
+                    document.getElementById("popUpCont").innerHTML = "";
+                }
+                
+                // Get the modal
+                var modal = document.getElementById("bigCont");
+                
+                // When the user clicks anywhere outside of the popup, close it
+                window.onclick = function(event){
+                    if (event.target === modal) {
+                        modal.style.display = "none";
+                    }
+                };
+                
+            </script>
+	</body>
+</html>
