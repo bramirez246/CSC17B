@@ -1,0 +1,199 @@
+body{
+    background-color:white;
+    width: 100%;
+    margin: auto;
+}
+
+h1{
+    color: rgb(76, 101, 142);
+}
+
+h4{
+    color: rgb(45, 61, 86);
+}
+
+.submit{
+    background-color: rgb(76, 101, 142);
+}
+
+#main{
+    width:80%;
+    padding: 1px 15px 15px 15px;
+    margin: auto;
+}
+
+/*********************************** Navigation Bar ***********************************/
+#topnav {
+    width: 90%;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px 0px 0px 10%;
+    overflow: hidden;
+    background-color: #333;
+    border-bottom: rgb(76, 101, 142) solid 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#topnav li {float: left;}
+
+#topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#topnav li a:hover:not(.active) {
+    background-color: rgb(45, 61, 86);
+}
+
+#topnav li a.active{
+    background-color: rgb(76, 101, 142);
+}
+
+#topnav li.right {
+    float: right;
+}
+
+/************************************* Login/ Register *************************************/
+#bigCont{
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(99, 100, 100, 0.9);
+}
+
+#loginCont{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 15px;
+    width: 300px;
+    height: auto;
+    background-color: white;
+    text-align: center;
+    border-radius: 15px;
+}
+
+#loginCont a{
+    background-color: rgb(76, 101, 142);
+    color:white;
+    margin: 10px 0;
+    padding: 10px 0;
+    text-decoration: none;
+    display: block;
+    float: left;
+    text-align: center;
+    border-radius: 20px;
+    width: 100%;
+    cursor: pointer;
+}
+
+#loginCont a:hover{
+    background-color: rgb(45, 61, 86);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#loginCont input[type=text], input[type=password]{
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+    border-color: rgba(76, 101, 142, 0.5);
+    border-radius: 20px;
+    background-color: rgba(175, 175, 175, 0.2);
+    margin: 10px 0 0px 0;
+    padding: 8px 0;
+    outline-style:none;
+}
+
+#loginNavBar{
+    display: none;
+    height: 40px;
+    width: 100%;
+    float: left;
+    cursor: pointer;
+}
+
+#loginNavBar p{
+    float: left;
+    color: rgb(76, 101, 142);
+    font-size: 18px;
+}
+
+#loginNavBar p:hover{
+    color: rgb(45, 61, 86);
+    text-shadow: 0 0 2px rgb(181, 181, 181);
+}
+
+#loginTitle{
+    display: block;
+    font-size: 2em;
+    margin: 0.67em 0;
+    font-weight: bold;
+    color: rgb(76, 101, 142);
+    width: 50%;
+    float: left;
+}
+
+#loginTitle:not(.active){
+    color: rgba(76, 101, 142, 0.5);
+}
+
+#loginTitle:hover:not(.active) {
+    color: rgba(45, 61, 86, 0.5);
+    cursor: pointer;
+}
+
+#backButton{
+    background-color: rgb(76, 101, 142);
+    color:white;
+    margin: 10px 0;
+    padding: 10px;
+    display: block;
+    text-align: center;
+    border-radius: 20px;
+    width: 19px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 10px;
+}
+
+#backButton:hover{
+    background-color: rgb(45, 61, 86);
+}
+
+#loginOpt{
+    display: block;
+}
+
+#login{
+    display: none;
+}
+
+#signup{
+    display: none;
+}
+
+/*********************************** Screen Size Change ***********************************/
+@media screen and (max-width: 500px){
+    body {
+        width: 100%;
+    }
+    
+    #topnav{
+        padding: 0px;
+    }
+    
+    #topnav li.right, 
+    #topnav li {float: none;}
+    
+    #createSurvey a{
+        float: none;
+    }
+}

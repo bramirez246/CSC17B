@@ -1,0 +1,65 @@
+<!-- 
+    Dr. Mark E. Lehr
+    Example for CSC/CIS 17B
+        Object serialization
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>CSC 17B Demographic Survey - Result</title>
+        <script type="text/javascript" src="getForm.js"></script>
+        <script type="text/javascript" src="Survey.js"></script>
+    </head>
+
+    <body>
+    <script type="text/javascript">
+        //Grab the info from the form and clean it
+        var url=document.location.href;
+        $_GET=getForm(url);
+        for(property in $_GET){
+            var str=$_GET[property];          //Place property value in string
+            var dec=decodeURIComponent(str);  //Convert to ascii
+            var clean=dec.replace(/\++/g,' ');//Remove + and replace by space
+            $_GET[property]=clean;            //Cleaned values
+        }
+        
+        /*************** Retrieve questions from storage **************/
+        var str=localStorage.getItem("survey");
+        //Parse the string into the object
+        var obj=JSON.parse(str);
+        var surveyComp = [];
+        //Push all the properties into surveyComp array
+        for(property in obj){
+            surveyComp.push(obj[property]);
+        }
+        // grab the questions property
+        var questions = surveyComp[2];
+        
+        /******************* record the result ************************/
+        // count the number of people who took the survey
+        obj.numOfPpl++;
+        // record the result of the survey
+        var counter=0;
+        for(property in $_GET){
+            var ans=$_GET[property];
+            var curQuest = obj.questions[counter];
+            var listOfAns = curQuest.ans;
+            for(var i = 0; i < listOfAns.length; i++){
+                if(ans == listOfAns[i]){
+                    curQuest.result[i]++;
+                }
+            }
+            counter++;
+        }
+        
+        // stringify and story the survey object into the local storage
+        var text = JSON.stringify(obj);
+        localStorage.setItem("survey",text);
+        
+        // redirect back to the result.html
+        window.location.href="result.html";
+        
+    </script>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create Survey Demo</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="Survey.js"></script>
+    </head>
+    
+    <body>
+        <script type="text/javascript">
+            var newSurvey = new Survey();
+            // adding survey questions into the newSurvey and JSON for example purposes
+            var name = "CSC 17B Demographic Survey";
+            var description = "Purpose of this survey is to see the demographic of the people who choices CSC17B as one of their course ";
+            var newSurvey = new Survey(name, description);
+
+            // Question 1
+            var identifier = "1";
+            var questions = "What is your gender?";
+            var answer = ["Male", "Female", "Prefer not to answer"];
+            this.newSurvey.addQuestion(identifier, questions, answer);
+            // Question 2
+            identifier = "2";
+            questions = "What is your racial Identity?";
+            answer = ["Caucasian", "African American", "Hispanic or Latino", "Asian", "Native American", "Other"];
+            this.newSurvey.addQuestion(identifier, questions, answer);
+            // Question 3
+            identifier = "3";
+            questions = "What is your age?";
+            answer = ["Under 18 years old", "19 to 24 years old", "25 to 35 years old", "36 to 45 years old", "46 years and older"];
+            this.newSurvey.addQuestion(identifier, questions, answer);
+            // Question 4
+            identifier = "4";
+            questions = "What is your major?";
+            answer = ["Computer Science", "Computer Engineer", "Computer Infomation System", "Undeclared", "Other"];
+            this.newSurvey.addQuestion(identifier, questions, answer);
+            // Question 5
+            identifier = "5";
+            questions = "What is your education goal?";
+            answer = ["Undergraduate Degrees", "Associate Degree", "Bachelor Degrees", "Graduate Degrees", "Master Degrees", "Doctoral Degrees", "Undeclared"];
+            newSurvey.addQuestion(identifier, questions, answer);
+
+            //Use JSON to turn into a string and store into the localStorage
+            var text=JSON.stringify(newSurvey);
+            localStorage.setItem("survey", text);
+            
+            // redirect back to the main.html
+        window.location.href="main.html";
+        </script>
+    </body>
+</html>

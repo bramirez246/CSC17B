@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Result</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="clearStorage.js"></script>
+        <script src="Survey.js"></script>
+    </head>
+    
+    <body>
+        <ul id="topnav">
+            <li><a href="main.html">Home</a></li>
+            <li><a href="addQuestion.html">Add Question</a></li>
+            <li><a href="result.html" class="active">Result</a></li>
+            <li><a href="main.html" onclick="clearStorage()" class="right" >Clear Survey</a></li>
+        </ul>
+        
+        <div id="main">
+            <h1>Result</h1>
+        </div>
+        
+        <script type="text/javascript">
+            //Retrieve survey from storage
+            var temp = new Survey();
+            temp.reconstSurvey();
+            
+            // set the new title
+            document.title += " - " + temp.name;
+            
+            if(temp.numOfPpl==0){
+                document.getElementById("main").innerHTML+="<p>error: no result were recorded</p>";
+            }else{
+                // display the survey result
+                temp.displayResult();
+            }
+        </script>
+    </body>
+</html>
